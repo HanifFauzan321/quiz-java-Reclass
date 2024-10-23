@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        
+    </head>
+
+    <body>
+        <h2 style="text-align: center; color: #333;">Daftar BARISTA</h2>
+        <table style="width: 80%; margin: auto; border-collapse: collapse; font-family: Arial, sans-serif;">
+            <thead>
+                <tr style="background-color: #4CAF50; color: white;">
+                    <th style="border: 1px solid #dddddd; padding: 8px;">ID</th>
+                    <th style="border: 1px solid #dddddd; padding: 8px;">NAME</th>
+                    <th style="border: 1px solid #dddddd; padding: 8px;">ASAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each=" barista : ${baristas}" style="background-color: #f2f2f2;">
+                    <td th:text="${barista.id}" style="border: 1px solid #dddddd; padding: 8px;"></td>
+                    <td th:text="${barista.name}" style="border: 1px solid #dddddd; padding: 8px;"></td>
+                    <td th:text="${barista.asal}" style="border: 1px solid #dddddd; padding: 8px;"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; margin: 10px 20px;">
+            <a style="background-color: transparent; color: white;" th:href="@{list-coffe}">LIST COFFE</a>
+        </button>
+        <button style="background-color: #4CAF50; color: white; padding: 10px 20px; margin: 10px 20px;">
+            <a style="background-color: transparent; color: white;" th:href="@{coffe-shop}">COFFE SHOP</a>
+        </button>
+
+    </body>
+</html>
